@@ -6,13 +6,10 @@ export const cardsSlice = createSlice({
   reducers: {
     addCard: (state, action) => {
       state.cards[action.payload.id] = action.payload
-    },
-    removeCard: (state, action) => {
-      delete state.cards[action.payload.id]
     }
   }
 })
 
-export const selectCards = state => state.cards
-export const {addCard, removeCard} = cardsSlice.actions
+export const selectCards = state => state.cards.cards
+export const {addCard} = cardsSlice.actions
 export default cardsSlice.reducer
